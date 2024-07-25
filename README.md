@@ -34,11 +34,6 @@ This Backend Application is used for vehicle rental systems such as car rental, 
 
 - Clone the project
 
-```sh
-  git clone https://github.com/ahmaddhohirazhari/backend-go-music-app.git (HTTPS)
-  git clone git@github.com:ahmaddhohirazhari/backend-go-music-app.git (SSH)
-```
-
 - Add Env
 
 ```sh
