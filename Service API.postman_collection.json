@@ -49,7 +49,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"email\":\"dhohir120@gmail.com\",\r\n    \"name\":\"dhohirinn\",\r\n    \"phone\":\"0853795551400\",\r\n    \"address\":\"Jakarta Selatan\",\r\n    \"birth_date\":\"2003-02-01Z\",\r\n    \"password\":\"rahasia\"\r\n}",
+              "raw": "{\r\n    \"email\":\"dhohir120@gmail.com\",\r\n    \"name\":\"dhohirinn\",\r\n    \"phone\":\"0853795551400\",\r\n    \"address\":\"Jakarta Selatan\",\r\n    \"birth_date\":\"2024-07-25T14:25:40.844685+07:00\",\r\n    \"password\":\"rahasia\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
