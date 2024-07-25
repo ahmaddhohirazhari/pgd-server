@@ -1,0 +1,323 @@
+{
+  "info": {
+    "_postman_id": "cdcc0ce7-e492-4832-bfb0-238d29d496d6",
+    "name": "Service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25631499",
+    "_collection_link": "https://grey-satellite-323814.postman.co/workspace/user-service-API~03bef87c-bfd3-45a1-8f1d-3f8e4e21a48b/collection/25631499-cdcc0ce7-e492-4832-bfb0-238d29d496d6?action=share&source=collection_link&creator=25631499"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\":\"dhohir12@gmail.com\",\r\n    \"password\":\"rahasia\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{auth_api}}/login",
+              "host": ["{{auth_api}}"],
+              "path": ["login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"dhohir120@gmail.com\",\r\n    \"name\":\"dhohirinn\",\r\n    \"phone\":\"0853795551400\",\r\n    \"address\":\"Jakarta Selatan\",\r\n    \"birth_date\":\"2003-02-01Z\",\r\n    \"password\":\"rahasia\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{auth_api}}/users",
+              "host": ["{{auth_api}}"],
+              "path": ["users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ping",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:8080",
+              "protocol": "https",
+              "host": ["localhost"],
+              "port": "8080"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{auth_api}}/users",
+              "host": ["{{auth_api}}"],
+              "path": ["users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get one",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{auth_api}}/users/da9e4cd1-41a7-463c-94d2-02df7748c95a",
+              "host": ["{{auth_api}}"],
+              "path": ["users", "da9e4cd1-41a7-463c-94d2-02df7748c95a"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Ahmad Dhohir Azhari\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{auth_api}}/users/da9e4cd1-41a7-463c-94d2-02df7748c95a",
+              "host": ["{{auth_api}}"],
+              "path": ["users", "da9e4cd1-41a7-463c-94d2-02df7748c95a"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{auth_api}}/users/35287288-9c10-45f6-94fb-b2e15ed4c1f9",
+              "host": ["{{auth_api}}"],
+              "path": ["users", "35287288-9c10-45f6-94fb-b2e15ed4c1f9"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "get all",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{auth_api}}/customers",
+              "host": ["{{auth_api}}"],
+              "path": ["customers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"dhohirinn\",\r\n    \"phone\":\"0853795551400\",\r\n    \"address\":\"Jakarta Selatan\",\r\n    \"birth_date\":\"2003-02-01T00:00:00Z\",\r\n    \"password\":\"rahasia\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{auth_api}}/customers",
+              "host": ["{{auth_api}}"],
+              "path": ["customers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get one",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{auth_api}}/customers/da0732c7-5013-42a8-8dd2-aa2f8a52677c",
+              "host": ["{{auth_api}}"],
+              "path": ["customers", "da0732c7-5013-42a8-8dd2-aa2f8a52677c"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"dhohira\",\r\n    \"phone\":\"0853795551400\",\r\n    \"address\":\"Jakarta Selatan\",\r\n    \"birth_date\":\"2003-02-01T00:00:00Z\",\r\n    \"password\":\"rahasia\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{auth_api}}/customers/da0732c7-5013-42a8-8dd2-aa2f8a52677c",
+              "host": ["{{auth_api}}"],
+              "path": ["customers", "da0732c7-5013-42a8-8dd2-aa2f8a52677c"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{auth_api}}/customers/efac1801-0d83-4ad2-988f-76d6dba207a0",
+              "host": ["{{auth_api}}"],
+              "path": ["customers", "efac1801-0d83-4ad2-988f-76d6dba207a0"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
