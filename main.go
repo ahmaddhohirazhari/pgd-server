@@ -34,8 +34,6 @@ func main() {
 	var authMiddleware = middleware.AuthMiddleware{}
 	var corsMiddleware = middleware.CorsMiddleware{}
 
-	// authorizeRouter := r.Group("/api/v1")
-
 	if ev.ApiEnv == "development" {
 		r.Use(corsMiddleware.Cors())
 	} else {
@@ -69,6 +67,7 @@ func main() {
 	authorizeRouter.GET("/users/:id", userController.FindOne)
 	authorizeRouter.PATCH("/users/:id", userController.Update)
 	authorizeRouter.DELETE("/users/:id", userController.Delete)
+	r.GET("/api/v1/user", userController.FindAll)
 
 	// Customer
 	authorizeRouter.POST("/customers", customerController.Create)
@@ -78,8 +77,4 @@ func main() {
 	authorizeRouter.DELETE("/customers/:id", customerController.Delete)
 
 	r.Run() // listen and serve on 0.0.0.0:8080
-}
-
-func Add(a int, b int) int {
-	return a + b
 }
